@@ -1,0 +1,5 @@
+---
+:character: ! '*'
+:methods:
+- puts
+- p
