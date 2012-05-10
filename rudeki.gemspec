@@ -4,7 +4,7 @@ require File.expand_path('../lib/rudeki/version', __FILE__)
 Gem::Specification.new do |gem|
   gem.authors       = ["Michał Szyma"]
   gem.email         = ["raglub.ruby@gmail.com"]
-  gem.data          = "2012-05-08"
+  gem.date          = "2012-05-08"
   gem.description   = %q{Gem show you where are used methods puts.}
   gem.summary       = %q{Gem show you where are used methods  puts.}
   gem.homepage      = ""
