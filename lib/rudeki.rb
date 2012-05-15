@@ -7,13 +7,19 @@ Rudeki::Config.methods.each do |method|
 end
 
 def puts(arg)
-  length = 80
-  result = " puts -> "+ caller.first.to_s
-  old_puts("╔" + "═"*length)
-  old_puts("║" + "▒"*length)
-  old_puts("#{result}")
-  old_puts("║" + "▒"*length)
+  old_puts("╔═════════ METHOD - PUTS ═════")
+  old_puts("  puts -> #{caller.first.to_s}")
   old_puts(arg)
-  old_puts("║" + "▒"*length)
-  old_puts("╚" + "═"*length)
+  old_puts("╚═════════════════════════════")
 end
+
+class StandardError
+  def initialize(value = "RUDEKI ERROR")
+    super(value)
+    Kernel.puts "╔══════════ ERROR ══════════"
+    Kernel.puts "║ message:   #{message}"
+    Kernel.puts "║ #{caller.join("\n║ ")}"
+    Kernel.puts "╚═══════════════════════════"
+  end
+end
+
