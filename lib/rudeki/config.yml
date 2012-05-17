@@ -1,5 +1,5 @@
 ---
-:character: ! '*'
+:errors: true
 :methods:
-- puts
-- p
+- :puts
+- :p
