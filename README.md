@@ -1,6 +1,9 @@
-# Putlog
+# RUDEKI
 
-TODO: Write a gem description
+rudeki is acronym RUby DEbug KIt
+
+Gem can show where are used methods puts, p.
+
 
 ## Installation
 
@@ -18,4 +21,24 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+In default configuration you should only require rudeki in application.
+
+More about configuration below
+
+    Rudeki::Config.set do |conf|
+      # Select which methods you what highlight. 
+      # Default ars p, puts
+      conf.methods = [:p]
+
+      # If you want see where are generated errors you should set on true
+      # Default is true
+      conf.errors = false
+    end
+
+You should see something like
+
+    pry(main)> puts "rudeki"
+    ╔═════════ METHOD - PUTS ═════
+      puts -> (pry):2:in `<main>'
+    rudeki
+    ╚═════════════════════════════
