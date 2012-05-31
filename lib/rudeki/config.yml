@@ -1,5 +1,4 @@
 ---
-:errors: true
-:methods:
-- :puts
-- :p
+:errors: false
+:methods: []
+:logdef: nil
