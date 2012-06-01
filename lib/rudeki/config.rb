@@ -1,6 +1,7 @@
 # encoding: utf-8
 
 require 'yaml'
+require 'logger'
 
 module Rudeki
   # Configuration of Rudeki

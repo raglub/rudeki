@@ -1,18 +1,22 @@
 # -*- encoding: utf-8 -*-
+
 require File.expand_path('../lib/rudeki/version', __FILE__)
 
 Gem::Specification.new do |gem|
+  gem.name          = "rudeki"
   gem.authors       = ["Michał Szyma"]
   gem.email         = ["raglub.ruby@gmail.com"]
-  gem.date          = "2012-05-08"
-  gem.description   = %q{Gem can show where are used methods puts, p}
-  gem.summary       = %q{Gem can show where are used methods puts, p. }
-  gem.homepage      = ""
+  gem.version       = Rudeki::VERSION
+  gem.platform      = Gem::Platform::RUBY
+  gem.date          = "2012-06-01"
+  gem.description   = %q{Gem can show where are used methodsi: puts, p. You can locate the bugs}
+  gem.summary       = %q{Gem can show where are used methods: puts, p.}
+  gem.homepage      = "https://github.com/raglub/rudeki"
 
-  gem.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   gem.files         = `git ls-files`.split("\n")
   gem.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
-  gem.name          = "rudeki"
   gem.require_paths = ["lib"]
-  gem.version       = Rudeki::VERSION
+
+  gem.add_development_dependency "rspec", ">= 2.10.0"
+  gem.add_dependency "logger", ">= 1.2.8"
 end
