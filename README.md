@@ -34,6 +34,9 @@ More about configuration below
     >   # If you want see where are generated errors you should set on true
     >   # Default is false
     >   conf.errors = true
+
+    >   # set logdev for logger gem
+    >   conf.logdev = STDOUT
     > end
 
 You should see something like
