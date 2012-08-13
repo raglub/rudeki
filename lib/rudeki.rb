@@ -1,7 +1,8 @@
 # encoding: utf-8
 
-require "rudeki/config"
 require "logger"
+require "rudeki/config"
+require "rudeki/error"
 
 # Kernel.puts
 def rudeki_info(message)
@@ -20,7 +21,7 @@ module Rudeki
     rudeki_info " method quarantine is used in:"
     rudeki_info "   #{caller[0]}"
     rudeki_info "╚══════════════════════════════════════════════════════"
-  rescue => e
+  rescue Exception => e
     rudeki_info "╔═════════ RUDEKI::quarantine is continues ════════════"
     rudeki_info " message:"
     rudeki_info "    #{e.message}"
@@ -30,10 +31,13 @@ module Rudeki
   end
 end
 
+# position display method call puts
 def puts(arg)
   if Rudeki::Config.methods.include?(:puts)
+    track = caller.first.to_s
+    return unless track =~ /#{Rudeki::Config.regexp}/
     rudeki_info "╔═════════ METHOD - PUTS ═════"
-    rudeki_info " puts -> #{caller.first.to_s}"
+    rudeki_info " puts -> #{track}"
     rudeki_info arg
     rudeki_info "╚═════════════════════════════"
   else
@@ -43,8 +47,10 @@ end
 
 def p(arg)
   if Rudeki::Config.methods.include?(:p)
+    track = caller.first.to_s
+    return unless track =~ /#{Rudeki::Config.regexp}/
     rudeki_info "╔═════════ METHOD - P ═════"
-    rudeki_info " p -> #{caller.first.to_s}"
+    rudeki_info " p -> #{track}"
     rudeki_info arg
     rudeki_info "╚═════════════════════════════"
   else
@@ -52,15 +58,5 @@ def p(arg)
   end
 end
 
-class StandardError
-  def initialize(value = "RUDEKI ERROR")
-    if Rudeki::Config.errors
-      rudeki_info "╔══════════ ERROR ══════════"
-      rudeki_info "║ message:   #{message}"
-      rudeki_info "║ #{caller.join("\n║ ")}"
-      rudeki_info "╚═══════════════════════════"
-    end
-    super(value)
-  end
-end
+
 

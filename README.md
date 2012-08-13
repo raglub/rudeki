@@ -32,11 +32,15 @@ More about configuration below
     >   conf.methods = [:p]
 
     >   # If you want see where are generated errors you should set on true
-    >   # Default is false
+    >   # Default is false.
     >   conf.errors = true
 
     >   # set logdev for logger gem
     >   conf.logdev = STDOUT
+
+    >   # You can filter out only those errors that meet regexp.
+    >   # Default are all message.
+    >   conf.regexp = "rails"
     > end
 
 You should see something like
@@ -47,6 +51,17 @@ You should see something like
     # rudeki
     # ╚═════════════════════════════
 
+Or (it work with conf.errors = true)
+
+╔══════════ ERROR ══════════
+║ message:   LoadError
+║ ...
+║ /home/rudeki/.rvm/gems/ruby-1.9.3-p194@spree/gems/railties-3.2.2/lib/rails/commands.rb:53:in `block in <top (required)>'
+║ /home/rudeki/.rvm/gems/ruby-1.9.3-p194@spree/gems/railties-3.2.2/lib/rails/commands.rb:50:in `tap'
+║ /home/rudeki/.rvm/gems/ruby-1.9.3-p194@spree/gems/railties-3.2.2/lib/rails/commands.rb:50:in `<top (required)>'
+║ script/rails:6:in `require'
+║ script/rails:6:in `<main>'
+╚═══════════════════════════
 
 ### Quarantine
 
