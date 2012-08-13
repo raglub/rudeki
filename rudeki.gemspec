@@ -8,7 +8,7 @@ Gem::Specification.new do |gem|
   gem.email         = ["raglub.ruby@gmail.com"]
   gem.version       = Rudeki::VERSION
   gem.platform      = Gem::Platform::RUBY
-  gem.date          = "2012-06-01"
+  gem.date          = "2012-08-13"
   gem.description   = %q{Gem can show where are used methodsi: puts, p. You can locate the bugs}
   gem.summary       = %q{Gem can show where are used methods: puts, p.}
   gem.homepage      = "https://github.com/raglub/rudeki"
@@ -20,3 +20,4 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency "rspec", ">= 2.10.0"
   gem.add_dependency "logger", ">= 1.2.8"
 end
+

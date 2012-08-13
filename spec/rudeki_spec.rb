@@ -1,4 +1,5 @@
 # encoding: utf-8
+
 require 'rudeki'
 
 def result_path
@@ -9,6 +10,7 @@ end
 Rudeki::Config.set do |conf|
   conf.methods = [:p, :puts]
   conf.logdev = result_path
+  conf.regexp = "spec\/rudeki_spec"
 end
 
 describe Rudeki do
