@@ -8,7 +8,7 @@ Gem::Specification.new do |gem|
   gem.email         = ["raglub.ruby@gmail.com"]
   gem.version       = Rudeki::VERSION
   gem.platform      = Gem::Platform::RUBY
-  gem.date          = "2012-08-13"
+  gem.date          = "2012-08-23"
   gem.description   = %q{Gem can show where are used methodsi: puts, p. You can locate the bugs}
   gem.summary       = %q{Gem can show where are used methods: puts, p.}
   gem.homepage      = "https://github.com/raglub/rudeki"

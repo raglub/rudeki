@@ -53,15 +53,15 @@ You should see something like
 
 Or (it work with conf.errors = true)
 
-╔══════════ ERROR ══════════
-║ message:   LoadError
-║ ...
-║ /home/rudeki/.rvm/gems/ruby-1.9.3-p194@spree/gems/railties-3.2.2/lib/rails/commands.rb:53:in `block in <top (required)>'
-║ /home/rudeki/.rvm/gems/ruby-1.9.3-p194@spree/gems/railties-3.2.2/lib/rails/commands.rb:50:in `tap'
-║ /home/rudeki/.rvm/gems/ruby-1.9.3-p194@spree/gems/railties-3.2.2/lib/rails/commands.rb:50:in `<top (required)>'
-║ script/rails:6:in `require'
-║ script/rails:6:in `<main>'
-╚═══════════════════════════
+    ╔══════════ ERROR ══════════
+    ║ message:   LoadError
+    ║ ...
+    ║ /home/rudeki/.rvm/gems/ruby-1.9.3-p194@spree/gems/railties-3.2.2/lib/rails/commands.rb:53:in `block in <top (required)>'
+    ║ /home/rudeki/.rvm/gems/ruby-1.9.3-p194@spree/gems/railties-3.2.2/lib/rails/commands.rb:50:in `tap'
+    ║ /home/rudeki/.rvm/gems/ruby-1.9.3-p194@spree/gems/railties-3.2.2/lib/rails/commands.rb:50:in `<top (required)>'
+    ║ script/rails:6:in `require'
+    ║ script/rails:6:in `<main>'
+    ╚═══════════════════════════
 
 ### Quarantine
 
