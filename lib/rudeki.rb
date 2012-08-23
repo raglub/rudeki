@@ -4,7 +4,6 @@ require "logger"
 require "rudeki/config"
 require "rudeki/error"
 
-# Kernel.puts
 def rudeki_info(message)
   if @logger.nil?
     @logger = Logger.new(Rudeki::Config.logdev || STDOUT)

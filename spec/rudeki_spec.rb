@@ -48,5 +48,4 @@ describe Rudeki do
     result.should include("undefined local variable or method `id' for #")
     result.should include("backtrace:")
   end
-
 end

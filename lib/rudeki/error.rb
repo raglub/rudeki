@@ -1,18 +1,25 @@
 # encoding: utf-8
 
 module Rudeki::Error
+
   def initialize(value = "RUDEKI ERROR")
-    if Rudeki::Config.errors
-      track = "#{caller.join("\n║ ")}"
-      return if track.include?("rudeki")
-      return unless track =~ /#{Rudeki::Config.regexp}/
-      rudeki_info "╔══════════ ERROR ══════════"
-      rudeki_info "║ message:   #{message}"
-      rudeki_info "║ #{track}"
-      rudeki_info "╚═══════════════════════════"
-    end
+    show_error if Rudeki::Config.errors
     super(value)
   end
+
+  def show_message(title, messages = [])
+    rudeki_info "╔══════════ #{title} ══════════"
+    messages.each { |message| rudeki_info "║ #{message}" }
+    rudeki_info "╚═══════════════════════════"
+  end
+
+  def show_error
+    track = "#{caller.join("\n║ ")}"
+    return if track.include?("rudeki")
+    return unless track =~ /#{Rudeki::Config.regexp}/
+    show_message("ERROR", [" message:   #{message}", track])
+  end
+
 end
 
 class StandardError
